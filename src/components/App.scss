@@ -3,6 +3,7 @@
 }
 
 body {
+  background-color: #f7c978;
   font-family: monospace;
 }
 
@@ -11,9 +12,11 @@ body {
   position: fixed;
   top: 0;
   bottom: 0;
+  height: 80vh;
+  margin: 0 auto;
+  max-width: 60rem;
   left: 0;
   right: 0;
-  height: 80vh;
 }
 
 .container { 

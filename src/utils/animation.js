@@ -1,8 +1,8 @@
 export const featherAnimation = [
-  { transform: "translateY(0)" },
+  { transform: "translateY(0)", opacity: 0.7 },
   { transform: "translateY(20vh) translateX(2px) rotate(5deg)" },
   { transform: "translateY(40vh) translateX(-2px) rotate(-5deg)" },
-  { transform: "translateY(60vh)" }
+  { transform: "translateY(60vh)", opacity: 1 }
 ];
 
 export const foregroundAnimation = [
