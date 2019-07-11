@@ -1,0 +1,32 @@
+.Slider {
+  text-align: center;
+
+  &__input {
+    -webkit-appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::-webkit-slider-runnable-track {
+      height: 3px;
+      background-color: darken(#3f51b1, 20%);
+      vertical-align: middle;
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background-color: #fff;
+      border: none;
+      border-radius: 50%;
+      margin-top: -5px;
+      height: 14px;
+      width: 14px;
+    }
+  }
+
+  &__duration {
+    color: darken(#3f51b1, 20%);
+    margin: 0.5rem 0 0 0;
+  }
+}

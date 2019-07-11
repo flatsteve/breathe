@@ -9,13 +9,14 @@ import {
 import Feather from "./Feather";
 import Sun from "./Sun";
 import { Foreground, Background } from "./Landscapes";
-
+import { INITIAL_DURATION } from "../utils/constants";
 import Actions from "./Actions";
 
 export default class Breathe extends Component {
   constructor(props) {
     super(props);
 
+    this.animations = null;
     this.featherAnimation = null;
     this.foregroundAnimation = null;
     this.backgroundAnimation = null;
@@ -26,7 +27,8 @@ export default class Breathe extends Component {
   }
 
   state = {
-    animating: false
+    animating: false,
+    duration: INITIAL_DURATION
   };
 
   componentDidMount() {
@@ -36,42 +38,66 @@ export default class Breathe extends Component {
   }
 
   startAnimation = () => {
-    if (this.featherAnimation && this.foregroundAnimation) {
+    if (this.animations) {
       this.setState({ animating: true }, () => {
-        this.featherAnimation.play();
-        this.foregroundAnimation.play();
-        this.backgroundAnimation.play();
+        this.animations.forEach(animation => {
+          animation.play();
+        });
       });
     } else {
       this.setState({ animating: true }, () => {
+        const { duration } = this.state;
+        const timing = { ...animationTiming, duration };
+
         this.featherAnimation = this.featherElement.animate(
           featherAnimation,
-          animationTiming
+          timing
         );
 
         this.foregroundAnimation = this.landscapeElement.animate(
           foregroundAnimation,
-          animationTiming
+          timing
         );
 
         this.backgroundAnimation = this.backgroundElement.animate(
           backgroundAnimation,
-          { ...animationTiming, delay: 1000 }
+          { ...timing, delay: 1000 }
         );
+
+        this.animations = [
+          this.featherAnimation,
+          this.foregroundAnimation,
+          this.backgroundAnimation
+        ];
       });
     }
   };
 
   pauseAnimation = () => {
     this.setState({ animating: false }, () => {
-      this.featherAnimation.pause();
-      this.foregroundAnimation.pause();
-      this.backgroundAnimation.pause();
+      this.animations.forEach(animation => {
+        animation.pause();
+      });
+    });
+  };
+
+  updateAnimationDuration = e => {
+    const { value } = e.target;
+    const duration = value * 1000;
+
+    this.setState({ duration }, () => {
+      if (!this.animations) {
+        return;
+      }
+
+      this.animations.forEach(animation => {
+        animation.effect.updateTiming({ duration });
+      });
     });
   };
 
   render() {
-    const { animating } = this.state;
+    const { animating, duration } = this.state;
 
     return (
       <>
@@ -87,8 +113,10 @@ export default class Breathe extends Component {
 
         <Actions
           animating={animating}
+          duration={duration}
           startAnimation={this.startAnimation}
           pauseAnimation={this.pauseAnimation}
+          updateAnimationDuration={this.updateAnimationDuration}
         />
       </>
     );
