@@ -1,9 +1,12 @@
-.Foreground {
+.Foreground, .Background {
   bottom: 0;
-  max-height: 30vh;
   position: absolute;
-  transform: translateY(60%); // Initial position
   width: 100%;
+}
+
+.Foreground {
+  max-height: 30vh;
+  transform: translateY(60%); // Initial position
   z-index: 99;
 
   svg {
@@ -14,11 +17,8 @@
 }
 
 .Background {
-  bottom: 0;
   max-height: 35vh;
-  position: absolute;
   transform: translateY(30%); // Initial position
-  width: 100%;
   z-index: 9;
 
   svg {

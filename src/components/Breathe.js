@@ -12,6 +12,8 @@ import { Foreground, Background } from "./Landscapes";
 import { INITIAL_DURATION } from "../utils/constants";
 import Actions from "./Actions";
 
+import "./Breathe.scss";
+
 export default class Breathe extends Component {
   constructor(props) {
     super(props);
@@ -101,7 +103,7 @@ export default class Breathe extends Component {
 
     return (
       <>
-        <div className="container">
+        <div className="Breathe__container">
           <Sun />
 
           <Feather ref={this.featherElement} />

@@ -11,12 +11,20 @@ export default function App() {
     <div className="App">
       <Breathe />
 
-      <h1>Breathe</h1>
+      <div className="App__description">
+        <div className="App__description__text">
+          <h1>Remember to breathe...</h1>
 
-      <p>
-        A little app to help with mindful breathing. Before you write that
-        scathing code review comment, give it a go.
-      </p>
+          <p>
+            A little app to help with mindful breathing. Before you write that
+            scathing code review comment, give it a go ✌️.
+          </p>
+
+          <p>
+            Made with beer by <a href="https://flatsteve.com/">FlatSteve</a> 🧘
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -7,7 +7,7 @@ export const featherAnimation = [
 
 export const foregroundAnimation = [
   { transform: "translateY(60%)" },
-  { transform: "translateY(10%)" }
+  { transform: "translateY(15%)" }
 ];
 
 export const backgroundAnimation = [
