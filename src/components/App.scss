@@ -1,14 +1,16 @@
 * {
   box-sizing: border-box;
+  font-family: monospace;
 }
 
 body {
   background-color: #f7c978;
-  font-family: monospace;
   color: #fff;
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 60rem;
 }

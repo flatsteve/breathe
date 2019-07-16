@@ -1,0 +1,57 @@
+$toggle-width: 7rem;
+$slider-size: 2.7rem;
+$padding: 0.25rem;
+
+.TimeToggle-container {
+  position: absolute;
+  right: 1.25rem;
+  top: 1.25rem;
+  z-index: 9999;
+}
+
+.TimeToggle {
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid #f3a469;
+  border-radius: 3rem;
+  color: #fff;
+  display: flex;
+  height: calc(#{$slider-size} + #{$padding * 3});
+  justify-content: space-around;
+  padding: 0.25rem;
+  position: relative;
+  transition: all 0.2s ease-out;
+  width: $toggle-width;
+
+  &--checked {
+    border-color: lighten(#2a5298, 5%);
+  }
+
+  &__slider {
+    background-color: darken(#f3a469, 5%);
+    border: 2px solid darken(#f3a469, 8%);
+    border-radius: $slider-size;
+    content: "";
+    left: $padding;
+    height: $slider-size;
+    width: $slider-size;
+    position: absolute;
+    transform: translateX(0);
+    transition: all 0.2s ease-out;
+  }
+
+  &__text {
+    text-align: center;
+    width: 50%;
+  }
+
+  input:checked + .TimeToggle__slider {
+    background-color: darken(#2a5298, 5%);
+    border: 2px solid darken(#2a5298, 8%);
+    transform: translateX(calc(#{$toggle-width} - #{$slider-size} - #{$padding * 3}));
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+}

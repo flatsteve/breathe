@@ -99,11 +99,16 @@ export default class Breathe extends Component {
   };
 
   render() {
+    const { checked } = this.props;
     const { animating, duration } = this.state;
 
     return (
       <>
-        <div className="Breathe__container">
+        <div
+          className={`Breathe__container ${
+            checked ? "Breathe__container--night" : ""
+          }`}
+        >
           <Sun />
 
           <Feather ref={this.featherElement} />

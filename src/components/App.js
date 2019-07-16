@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
+import TimeToggle from "./TimeToggle";
 import Breathe from "./Breathe";
 
 import "normalize.css";
@@ -7,9 +8,13 @@ import "normalize.css";
 import "./App.scss";
 
 export default function App() {
+  const [checked, updateChecked] = useState(false);
+
   return (
     <div className="App">
-      <Breathe />
+      <TimeToggle checked={checked} updateChecked={updateChecked} />
+
+      <Breathe checked={checked} />
 
       <div className="App__description">
         <div className="App__description__text">
@@ -21,7 +26,7 @@ export default function App() {
           </p>
 
           <p>
-            Made with beer by <a href="https://flatsteve.com/">FlatSteve</a> 🧘
+            Made with 🍺 by <a href="https://flatsteve.com/">FlatSteve</a> 🧘
           </p>
         </div>
       </div>
