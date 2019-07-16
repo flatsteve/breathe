@@ -9,6 +9,7 @@ const Player = React.forwardRef((props, ref) => {
       ref={ref}
       src={`${SOUNDCLOUD_URL}/554818086&${objToQueryString(PLAYER_PARAMS)}`}
       title="Soundcloud"
+      allow="autoplay"
       width="100%"
       height="115"
       scrolling="no"
