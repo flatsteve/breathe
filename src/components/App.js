@@ -22,11 +22,22 @@ export default function App() {
 
           <p>
             A little app to help with mindful breathing. Before you write that
-            scathing code review comment, give it a go ✌️.
+            scathing code review comment, give it a go{" "}
+            <span role="img" aria-label="peace">
+              ✌️
+            </span>
+            .
           </p>
 
           <p>
-            Made with 🍺 by <a href="https://flatsteve.com/">FlatSteve</a> 🧘
+            Made with{" "}
+            <span role="img" aria-label="beer">
+              🍺
+            </span>{" "}
+            by <a href="https://flatsteve.com/">FlatSteve</a>{" "}
+            <span role="img" aria-label="yoga">
+              🧘
+            </span>
           </p>
         </div>
       </div>

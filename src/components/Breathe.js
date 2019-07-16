@@ -6,11 +6,13 @@ import {
   foregroundAnimation,
   backgroundAnimation
 } from "../utils/animation";
+import Soundcloud from "../services/soundcloud";
 import Feather from "./Feather";
 import Sun from "./Sun";
 import { Foreground, Background } from "./Landscapes";
 import { INITIAL_DURATION } from "../utils/constants";
 import Actions from "./Actions";
+import Player from "./Player";
 
 import "./Breathe.scss";
 
@@ -22,10 +24,12 @@ export default class Breathe extends Component {
     this.featherAnimation = null;
     this.foregroundAnimation = null;
     this.backgroundAnimation = null;
+    this.Player = null;
 
     this.featherElement = React.createRef();
     this.landscapeElement = React.createRef();
     this.backgroundElement = React.createRef();
+    this.playerElement = React.createRef();
   }
 
   state = {
@@ -37,6 +41,7 @@ export default class Breathe extends Component {
     this.featherElement = this.featherElement.current;
     this.landscapeElement = this.landscapeElement.current;
     this.backgroundElement = this.backgroundElement.current;
+    this.Player = new Soundcloud(this.playerElement.current);
   }
 
   startAnimation = () => {
@@ -73,6 +78,8 @@ export default class Breathe extends Component {
         ];
       });
     }
+
+    this.Player.play();
   };
 
   pauseAnimation = () => {
@@ -80,6 +87,8 @@ export default class Breathe extends Component {
       this.animations.forEach(animation => {
         animation.pause();
       });
+
+      this.Player.pause();
     });
   };
 
@@ -125,6 +134,8 @@ export default class Breathe extends Component {
           pauseAnimation={this.pauseAnimation}
           updateAnimationDuration={this.updateAnimationDuration}
         />
+
+        <Player ref={this.playerElement} />
       </>
     );
   }
