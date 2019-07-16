@@ -1,0 +1,7 @@
+{
+  "name": "Breathe",
+  "short_name": "Breathe",
+  "display": "standalone",
+  "background_color": "#3f51b1",
+  "description": "A little app to help with mindful breathing."
+}
