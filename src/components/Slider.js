@@ -10,17 +10,14 @@ export default function Slider({ duration, updateAnimationDuration }) {
       <input
         className="Slider__input"
         type="range"
-        onChange={updateAnimationDuration}
         min="3"
         max="10"
-        value={durationInSec}
         step="1"
+        value={durationInSec}
+        onChange={updateAnimationDuration}
       />
 
-      <p className="Slider__duration">
-        {durationInSec}
-        <small>sec</small>
-      </p>
+      <p className="Slider__duration">{durationInSec}s breath</p>
     </div>
   );
 }

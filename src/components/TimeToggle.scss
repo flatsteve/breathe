@@ -1,3 +1,5 @@
+@import "../styles/colors";
+
 $toggle-width: 7rem;
 $slider-size: 2.7rem;
 $padding: 0.25rem;
@@ -12,7 +14,7 @@ $padding: 0.25rem;
 .TimeToggle {
   align-items: center;
   background-color: transparent;
-  border: 2px solid #f3a469;
+  border: 2px solid $orange;
   border-radius: 3rem;
   color: #fff;
   display: flex;
@@ -28,8 +30,8 @@ $padding: 0.25rem;
   }
 
   &__slider {
-    background-color: darken(#f3a469, 5%);
-    border: 2px solid darken(#f3a469, 8%);
+    background-color: darken($orange, 5%);
+    border: 2px solid darken($orange, 8%);
     border-radius: $slider-size;
     content: "";
     left: $padding;

@@ -1,11 +1,13 @@
+@import "../styles/colors";
+
 * {
   box-sizing: border-box;
   font-family: monospace;
 }
 
 body {
-  background-color: #f7c978;
-  color: #fff;
+  background-color: $yellow;
+  color: $white;
 }
 
 .App {
@@ -17,15 +19,15 @@ body {
 }
 
 .App__description {
-  background-color: #3f51b1;
-  padding: 2.5rem;
+  background-color: $purple;
+  padding: 2.5rem 1.25rem;
 
   h1 {
     margin: 0 0 1.25rem 0;
   }
 
   a {
-    color: #f7c978;
+    color: $yellow;
     text-decoration: none;
   }
 

@@ -1,7 +1,9 @@
+@import "../styles/colors";
+
 .Actions {
   align-items: flex-start;
   display: flex;
-  background-color: #3f51b1;
+  background-color: $purple;
   height: 20vh;
   justify-content: space-around;
   padding-top: 1.25rem;
@@ -9,7 +11,7 @@
   z-index: 9999;
 
   button {
-    color: #fff;
+    color: $white;
     background: none;
     border: none;
 
@@ -21,16 +23,16 @@
       cursor: pointer;
 
       svg {
-        fill: darken(#3f51b1, 20%);
+        fill: darken($purple, 20%);
       }
     }
 
     svg {
-      fill: #ffffff;
+      fill: $white;
       height: 1.25rem;
-      width: 1.25rem;
-      transition: all 0.3s ease-in;
       opacity: 1;
+      transition: all 0.3s ease-in;
+      width: 1.25rem;
     }
   }
 }

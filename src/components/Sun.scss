@@ -1,5 +1,7 @@
+$sun-white: #f2f2f2;
+
 .Sun {
-  background-color: #f2f2f2;
+  background-color: $sun-white;
   border-radius: 50%;
   box-shadow: 2px 0px 10rem 5rem rgba(255, 255, 255, 0.4);
   left: 50%;
