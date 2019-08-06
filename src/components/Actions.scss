@@ -45,9 +45,13 @@
       width: 1.25rem;
     }
 
-    &--large svg {
-      height: 2rem;
-      width: 2rem;
-    }
+    &--large {
+      width: 3rem;
+
+      svg {
+        height: 2rem;
+        width: auto;
+      }
+    } 
   }
 }
