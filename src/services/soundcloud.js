@@ -10,6 +10,10 @@ class Soundcloud {
   pause() {
     this.widget.pause();
   }
+
+  setVolume(level) {
+    this.widget.setVolume(level);
+  }
 }
 
 export default Soundcloud;

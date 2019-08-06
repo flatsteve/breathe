@@ -5,15 +5,25 @@
   display: flex;
   background-color: $purple;
   height: 20vh;
-  justify-content: space-around;
-  padding-top: 1.25rem;
+  justify-content: space-evenly;
+  padding: 1.25rem;
   position: relative;
   z-index: 9999;
 
-  button {
+  &__buttons {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__button {
     color: $white;
     background: none;
     border: none;
+  
+    &:first-of-type {
+      margin-right: 2.5rem;
+    }
 
     &:focus {
       outline: none;
@@ -33,6 +43,11 @@
       opacity: 1;
       transition: all 0.3s ease-in;
       width: 1.25rem;
+    }
+
+    &--large svg {
+      height: 2rem;
+      width: 2rem;
     }
   }
 }

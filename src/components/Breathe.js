@@ -34,6 +34,7 @@ export default class Breathe extends Component {
 
   state = {
     animating: false,
+    sound: true,
     duration: INITIAL_DURATION
   };
 
@@ -92,6 +93,14 @@ export default class Breathe extends Component {
     });
   };
 
+  toggleSound = () => {
+    const { sound } = this.state;
+
+    this.setState({ sound: !sound }, () => {
+      this.Player.setVolume(sound ? 0 : 100);
+    });
+  };
+
   updateAnimationDuration = e => {
     const { value } = e.target;
     const duration = value * 1000;
@@ -109,7 +118,7 @@ export default class Breathe extends Component {
 
   render() {
     const { checked } = this.props;
-    const { animating, duration } = this.state;
+    const { animating, duration, sound } = this.state;
 
     return (
       <>
@@ -129,9 +138,11 @@ export default class Breathe extends Component {
 
         <Actions
           animating={animating}
+          sound={sound}
           duration={duration}
           startAnimation={this.startAnimation}
           pauseAnimation={this.pauseAnimation}
+          toggleSound={this.toggleSound}
           updateAnimationDuration={this.updateAnimationDuration}
         />
 
